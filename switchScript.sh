@@ -653,13 +653,14 @@ atmosphere=1
 icon=bootloader/res/icon_Atmosphere_emunand.bmp
 id=cfw-emu
 
-[CFW (sysMMC)]
-emummc_force_disable=1
-fss0=atmosphere/package3
-kip1patch=nosigchk
-atmosphere=1
-icon=bootloader/res/icon_Atmosphere_sysnand.bmp
-id=cfw-sys
+# 真实系统启动项
+# [CFW (sysMMC)]
+# emummc_force_disable=1
+# fss0=atmosphere/package3
+# kip1patch=nosigchk
+# atmosphere=1
+# icon=bootloader/res/icon_Atmosphere_sysnand.bmp
+# id=cfw-sys
 
 [Stock SysNAND]
 emummc_force_disable=1
