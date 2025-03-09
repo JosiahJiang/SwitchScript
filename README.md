@@ -11,6 +11,7 @@
     - [x] 主机系统的密钥提取工具 `Lockpick_RCM` [From Here](https://github.com/saneki/Lockpick_RCM/releases/latest)
     - [x] Hekate下的文件管理工具 `TegraExplorer` [From Here](https://github.com/suchmememanyskill/TegraExplorer/releases/latest)
     - [x] Hekate下删除主题和关闭插件自动启动 `CommonProblemResolver` [From Here](https://github.com/zdm65477730/CommonProblemResolver/releases/latest)
+    - [x] 树莓派芯片工具箱插件`picofly_toolbox`[From Here](https://github.com/Ansem-SoD/Picofly/tree/main/Firmwares)
   - Nro插件
     - [x] 联网检测是否屏蔽任天堂服务器 `Switch_90DNS_tester` [From Here](https://github.com/meganukebmp/Switch_90DNS_tester/releases/latest)
     - [x] 游戏安装，存档管理和文件传输工具 `DBI` [From Here](https://github.com/rashevskyv/dbi/releases/latest)
@@ -70,7 +71,7 @@
   - 运行脚本（switchScript.sh）
 
 ## 更新日志
-- 2025-03-09 将原版`sys-clk`改为`sys-clk-oc`(`OC Toolkit`自带版本)
+- 2025-03-09 将原版`sys-clk`改为`sys-clk-oc`(`OC Toolkit`自带版本)，添加`picofly_toolbox`插件
 - 2025-02-28 个性化定制，精简部分功能
 - 2024-12-11 更新 `Lockpick_RCM` 仓库地址，降级 `DBI` 至版本658
 - 2024-10-29 更新脚本，修正 `sys-patch` 文件更新造成的运行错误
