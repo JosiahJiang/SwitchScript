@@ -39,6 +39,7 @@ mkdir -p ./SwitchSD/switch/SimpleModDownloader
 # mkdir -p ./SwitchSD/switch/Switchfin
 # mkdir -p ./SwitchSD/switch/tencent-switcher-gui
 # mkdir -p ./SwitchSD/switch/wiliwili
+mkdir -p ./SwitchSD/switch/Linkalho
 mkdir -p ./SwitchSD/switch/.overlays
 mkdir -p ./SwitchSD/switch/.packages
 
@@ -314,6 +315,15 @@ fi
 #     rm -rf wiliwili
 #     rm wiliwili-NintendoSwitch.zip
 # fi
+
+curl -sL https://raw.github.com/JosiahJiang/SwitchScript/main/plugins/linkalho.nro -o linkalho.nro
+if [ $? -ne 0 ]; then
+    echo "linkalho.nro download\033[31m failed\033[0m."
+else
+    echo "linkalho.nro download\033[32m success\033[0m."
+    mv linkalho.nro ./switch/Linkalho
+    echo linkalho-v2.0.1 >> ../description.txt
+fi
 
 ### Fetch lastest SimpleModDownloader from https://github.com/PoloNX/SimpleModDownloader/releases/latest
 curl -sL https://api.github.com/repos/PoloNX/SimpleModDownloader/releases/latest \

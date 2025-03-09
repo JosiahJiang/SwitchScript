@@ -29,6 +29,7 @@
     - [x] 文件管理 `NX-Shell` [From Here](https://www.tekqart.com/thread-222735-1-1.html)
     <!-- - [x] 黑商店 `hb-appstore`  [From Here](https://github.com/fortheusers/hb-appstore/releases/latest) -->
     - [x] 系统升级工具 `daybreak`  [From Here](https://www.tekqart.com/thread-258184-1-1.html)
+    - [x] 账户绑定工具 `linkalho` [From Here](https://gbatemp.net/download/linkalho.38822/)
 
   - 补丁
     <!-- - [x] 主题破解 `theme-patches` [From Here](https://github.com/exelix11/theme-patches) -->
@@ -71,7 +72,7 @@
   - 运行脚本（switchScript.sh）
 
 ## 更新日志
-- 2025-03-09 将原版`sys-clk`改为`sys-clk-oc`(`OC Toolkit`自带版本)，添加`picofly_toolbox`插件
+- 2025-03-09 将原版`sys-clk`改为`sys-clk-oc`(`OC Toolkit`自带版本)，添加`picofly_toolbox`、`linkalho-v2.0.1`插件
 - 2025-02-28 个性化定制，精简部分功能
 - 2024-12-11 更新 `Lockpick_RCM` 仓库地址，降级 `DBI` 至版本658
 - 2024-10-29 更新脚本，修正 `sys-patch` 文件更新造成的运行错误
