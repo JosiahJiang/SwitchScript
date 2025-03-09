@@ -630,7 +630,7 @@ fi
 ### Write hekate_ipl.ini in /bootloader/
 cat > ./bootloader/hekate_ipl.ini << ENDOFFILE
 [config]
-autoboot=0
+autoboot=2
 autoboot_list=0
 bootwait=3
 backlight=100
@@ -647,20 +647,10 @@ payload=bootloader/payloads/fusee.bin
 [CFW (emuMMC)]
 emummcforce=1
 fss0=atmosphere/package3
-kip1patch=nosigchk
 kip1=atmosphere/kips/loader.kip
 atmosphere=1
 icon=bootloader/res/icon_Atmosphere_emunand.bmp
 id=cfw-emu
-
-# 真实系统启动项
-# [CFW (sysMMC)]
-# emummc_force_disable=1
-# fss0=atmosphere/package3
-# kip1patch=nosigchk
-# atmosphere=1
-# icon=bootloader/res/icon_Atmosphere_sysnand.bmp
-# id=cfw-sys
 
 [Stock SysNAND]
 emummc_force_disable=1
