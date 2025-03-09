@@ -564,21 +564,35 @@ else
     rm sys-patch.zip
 fi
 
-### Fetch sys-clk from https://github.com/retronx-team/sys-clk/releases/latest
-curl -sL https://api.github.com/repos/retronx-team/sys-clk/releases/latest \
-  | jq '.tag_name' \
-  | xargs -I {} echo sys-clk {} >> ../description.txt
-curl -sL https://api.github.com/repos/retronx-team/sys-clk/releases/latest \
+# ### Fetch sys-clk from https://github.com/retronx-team/sys-clk/releases/latest
+# curl -sL https://api.github.com/repos/retronx-team/sys-clk/releases/latest \
+#   | jq '.tag_name' \
+#   | xargs -I {} echo sys-clk {} >> ../description.txt
+# curl -sL https://api.github.com/repos/retronx-team/sys-clk/releases/latest \
+#   | grep -oP '"browser_download_url": "\Khttps://[^"]*sys-clk[^"]*.zip"' \
+#   | sed 's/"//g' \
+#   | xargs -I {} curl -sL {} -o sys-clk.zip
+# if [ $? -ne 0 ]; then
+#     echo "sys-clk download\033[31m failed\033[0m."
+# else
+#     echo "sys-clk download\033[32m success\033[0m."
+#     unzip -oq sys-clk.zip
+#     rm sys-clk.zip
+#     rm README.md
+# fi
+
+### Fetch sys-clk-oc from https://github.com/halop/OC_Toolkit_SC_EOS/releases/latest
+curl -sL https://api.github.com/repos/halop/OC_Toolkit_SC_EOS/releases/latest \
   | grep -oP '"browser_download_url": "\Khttps://[^"]*sys-clk[^"]*.zip"' \
   | sed 's/"//g' \
-  | xargs -I {} curl -sL {} -o sys-clk.zip
+  | xargs -I {} curl -sL {} -o sys-clk-oc.zip
 if [ $? -ne 0 ]; then
-    echo "sys-clk download\033[31m failed\033[0m."
+    echo "sys-clk-oc download\033[31m failed\033[0m."
 else
-    echo "sys-clk download\033[32m success\033[0m."
-    unzip -oq sys-clk.zip
-    rm sys-clk.zip
-    rm README.md
+    echo "sys-clk-oc download\033[32m success\033[0m."
+    echo sys-clk-oc >> ../description.txt
+    unzip -oq sys-clk-oc.zip
+    rm sys-clk-oc.zip
 fi
 
 ### Fetch lastest OC_Toolkit_SC_EOS from https://github.com/halop/OC_Toolkit_SC_EOS/releases/latest
