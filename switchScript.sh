@@ -674,10 +674,12 @@ autonogc=1
 updater2p=0
 bootprotect=0
 
+{大气层-自动识别}
 [Fusee]
 icon=bootloader/res/icon_ams.bmp
 payload=bootloader/payloads/fusee.bin
 
+{大气层-虚拟系统}
 [CFW (emuMMC)]
 emummcforce=1
 fss0=atmosphere/package3
@@ -686,6 +688,15 @@ atmosphere=1
 icon=bootloader/res/icon_Atmosphere_emunand.bmp
 id=cfw-emu
 
+# {大气层-真实系统}
+# [CFW (sysMMC)]
+# emummc_force_disable=1
+# fss0=atmosphere/package3
+# atmosphere=1
+# icon=bootloader/res/icon_Atmosphere_sysnand.bmp
+# id=cfw-sys
+
+{机身正版系统}
 [Stock SysNAND]
 emummc_force_disable=1
 fss0=atmosphere/package3
