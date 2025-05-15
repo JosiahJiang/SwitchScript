@@ -36,6 +36,7 @@ mkdir -p ./SwitchSD/switch/JKSV
 mkdir -p ./SwitchSD/switch/Moonlight
 # mkdir -p ./SwitchSD/switch/NXThemesInstaller
 mkdir -p ./SwitchSD/switch/SimpleModDownloader
+mkdir -p ./SwitchSD/switch/SimpleModManager
 # mkdir -p ./SwitchSD/switch/Switchfin
 # mkdir -p ./SwitchSD/switch/tencent-switcher-gui
 # mkdir -p ./SwitchSD/switch/wiliwili
@@ -338,6 +339,21 @@ if [ $? -ne 0 ]; then
 else
     echo "SimpleModDownloader download\033[32m success\033[0m."
     mv SimpleModDownloader.nro ./switch/SimpleModDownloader
+fi
+
+### Fetch lastest SimpleModManager from https://github.com/nadrino/SimpleModManager/releases/latest
+curl -sL https://api.github.com/repos/nadrino/SimpleModManager/releases/latest \
+  | jq '.tag_name' \
+  | xargs -I {} echo SimpleModManager {} >> ../description.txt
+curl -sL https://api.github.com/repos/nadrino/SimpleModManager/releases/latest \
+  | grep -oP '"browser_download_url": "\Khttps://[^"]*SimpleModManager.nro"' \
+  | sed 's/"//g' \
+  | xargs -I {} curl -sL {} -o SimpleModManager.nro
+if [ $? -ne 0 ]; then
+    echo "SimpleModManager download\033[31m failed\033[0m."
+else
+    echo "SimpleModManager download\033[32m success\033[0m."
+    mv SimpleModManager.nro ./switch/SimpleModManager
 fi
 
 # ### Fetch lastest Switchfin from https://github.com/dragonflylee/switchfin/releases/latest

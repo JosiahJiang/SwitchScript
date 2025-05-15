@@ -24,6 +24,7 @@
     - [ ] ~~多工具合一任天堂Switch更新器 `aio-switch-updater` [From Here](https://github.com/HamletDuFromage/aio-switch-updater/releases/latest)~~
     - [ ] ~~第三方B站客户端 `wiliwili` [From Here](https://github.com/xfangfang/wiliwili/releases/latest)~~
     - [x] Mod下载器 `SimpleModDownloader` [From Here](https://github.com/PoloNX/SimpleModDownloader/releases/latest)
+    - [x] Mod管理器 `SimpleModManager` [From here](https://github.com/nadrino/SimpleModManager/releases/latest)
     - [ ] ~~Jellyfin客户端 `Switchfin` [From Here](https://github.com/dragonflylee/switchfin/releases/latest)~~
     - [x] 串流工具 `Moonlight` [From Here](https://github.com/XITRIX/Moonlight-Switch/releases/latest)
     - [x] 文件管理 `NX-Shell` [From Here](https://www.tekqart.com/thread-222735-1-1.html)
@@ -72,6 +73,7 @@
   - 运行脚本（switchScript.sh）
 
 ## 更新日志
+- 2025-05-15 添加 `SimpleModManager`
 - 2025-03-09 将原版`sys-clk`改为`sys-clk-oc`(`OC Toolkit`自带版本)，添加`picofly_toolbox`、`linkalho-v2.0.1`插件
 - 2025-02-28 个性化定制，精简部分功能
 - 2024-12-11 更新 `Lockpick_RCM` 仓库地址，降级 `DBI` 至版本658
