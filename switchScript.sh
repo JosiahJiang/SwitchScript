@@ -484,6 +484,8 @@ else
     echo "ovl-sysmodules download\033[32m success\033[0m."
     unzip -oq ovl-sysmodules.zip
     rm ovl-sysmodules.zip
+    #custom config
+    sed -i "s/powerControlEnabled=1/powerControlEnabled=0/g" config/ovl-sysmodules/config.ini
 fi
 
 ### Fetch StatusMonitor
@@ -544,6 +546,7 @@ else
     echo "Fizeau download\033[32m success\033[0m."
     unzip -oq Fizeau.zip
     rm Fizeau.zip
+    rm config/Fizeau/config.ini
 fi
 
 ### Fetch Zing
