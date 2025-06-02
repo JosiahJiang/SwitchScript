@@ -109,6 +109,7 @@ else
     echo "logo download\033[32m success\033[0m."
     unzip -oq logo.zip
     rm logo.zip
+    rm bootloader/bootlogo.bmp
 fi
 
 ### Fetch latest Lockpick_RCM.bin https://github.com/impeeza/Lockpick_RCMDecScots/releases/latest
