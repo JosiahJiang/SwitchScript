@@ -327,6 +327,7 @@ curl -sL "$download_url" -o ovl-sysmodules.zip&& {
     echo "ovl-sysmodules download\033[32m success\033[0m."
     unzip -oq ovl-sysmodules.zip
     rm ovl-sysmodules.zip
+    sed -i "s/powerControlEnabled=1/powerControlEnabled=0/g" config/ovl-sysmodules/config.ini
 } || echo "ovl-sysmodules download\033[31m failed\033[0m."
 
 ### Fetch StatusMonitor
@@ -381,6 +382,7 @@ curl -sL "$download_url" -o Fizeau.zip&& {
     echo "Fizeau download\033[32m success\033[0m."
     unzip -oq Fizeau.zip
     rm Fizeau.zip
+    rm config/Fizeau/config.ini
 } || echo "Fizeau download\033[31m failed\033[0m."
 
 ### Fetch Zing
