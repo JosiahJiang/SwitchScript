@@ -144,13 +144,13 @@ curl -sL "$download_url" -o DBI.nro && {
 } || echo "DBI download\033[31m failed\033[0m."
 
 ### Fetch lastest Awoo Installer from https://github.com/dragonflylee/Awoo-Installer/releases/latest
-latest_release_info=$(curl -sL https://api.github.com/repos/dragonflylee/Awoo-Installer/releases/latest)
-download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*Awoo-Installer.zip' | sed 's/"//g')
-curl -sL "$download_url" -o Awoo-Installer.zip && {
-    echo "Awoo Installer download\033[32m success\033[0m."
-    unzip -oq Awoo-Installer.zip
-    rm Awoo-Installer.zip
-} || echo "Awoo Installer download\033[31m failed\033[0m."
+# latest_release_info=$(curl -sL https://api.github.com/repos/dragonflylee/Awoo-Installer/releases/latest)
+# download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*Awoo-Installer.zip' | sed 's/"//g')
+# curl -sL "$download_url" -o Awoo-Installer.zip && {
+#     echo "Awoo Installer download\033[32m success\033[0m."
+#     unzip -oq Awoo-Installer.zip
+#     rm Awoo-Installer.zip
+# } || echo "Awoo Installer download\033[31m failed\033[0m."
 
 ### Fetch lastest Hekate-toolbox from https://github.com/WerWolv/Hekate-Toolbox/releases/latest
 latest_release_info=$(curl -sL https://api.github.com/repos/WerWolv/Hekate-Toolbox/releases/latest)
@@ -468,7 +468,6 @@ CommonProblemResolver
 picofly_toolbox
 Switch_90DNS_tester
 DBI
-Awoo-Installer
 Hekate-Toolbox
 NX-Activity-Log
 JKSV
