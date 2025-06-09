@@ -31,7 +31,7 @@ mkdir -p ./SwitchSD/config/ultrahand/lang
 mkdir -p ./SwitchSD/switch/Switch_90DNS_tester
 mkdir -p ./SwitchSD/switch/DBI
 mkdir -p ./SwitchSD/switch/NX-Shell
-mkdir -p ./SwitchSD/switch/HB-App-Store
+# mkdir -p ./SwitchSD/switch/HB-App-Store
 mkdir -p ./SwitchSD/switch/HekateToolbox
 mkdir -p ./SwitchSD/switch/JKSV
 mkdir -p ./SwitchSD/switch/Moonlight
@@ -42,9 +42,9 @@ mkdir -p ./SwitchSD/switch/SimpleModManager
 # mkdir -p ./SwitchSD/switch/tencent-switcher-gui
 # mkdir -p ./SwitchSD/switch/wiliwili
 mkdir -p ./SwitchSD/switch/NX-Activity-Log
+mkdir -p ./SwitchSD/switch/Linkalho
 mkdir -p ./SwitchSD/switch/.overlays
 mkdir -p ./SwitchSD/switch/.packages
-mkdir -p ./SwitchSD/switch/Linkalho
 
 cd SwitchSD
 
@@ -465,6 +465,7 @@ sigpatches
 Lockpick_RCM
 TegraExplorer
 CommonProblemResolver
+picofly_toolbox
 Switch_90DNS_tester
 DBI
 Awoo-Installer

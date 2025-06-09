@@ -28,7 +28,7 @@
     - [ ] ~~Jellyfin客户端 `Switchfin` [From Here](https://github.com/dragonflylee/switchfin/releases/latest)~~
     - [x] 串流工具 `Moonlight` [From Here](https://github.com/XITRIX/Moonlight-Switch/releases/latest)
     - [x] 文件管理 `NX-Shell` [From Here](https://github.com/zdm65477730/NX-Shell/releases/latest)
-    - [x] 黑商店 `hb-appstore`  [From Here](https://github.com/fortheusers/hb-appstore/releases/latest)
+    - [ ] ~~黑商店 `hb-appstore`  [From Here](https://github.com/fortheusers/hb-appstore/releases/latest)~~
     - [x] 系统升级工具 `daybreak`  [From Here](https://www.tekqart.com/thread-258184-1-1.html)
     - [x] 账户绑定工具 `linkalho` [From Here](https://gbatemp.net/download/linkalho.38822/)
 
