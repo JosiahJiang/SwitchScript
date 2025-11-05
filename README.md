@@ -73,6 +73,7 @@
   - 运行脚本（switchScript.sh）
 
 ## 更新日志
+- 2025-11-05 更新 `system_settings.ini`
 - 2025-06-08 批量更新插件地址；精简代码，修正由于 `API` 限制而造成的运行错误
 - 2025-05-15 添加 `SimpleModManager`
 - 2025-05-12 更新 `Lockpick_RCM` 仓库地址
