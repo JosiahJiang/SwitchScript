@@ -135,16 +135,16 @@ curl -sL "$download_url" -o Switch_90DNS_tester.nro && {
     mv Switch_90DNS_tester.nro ./switch/Switch_90DNS_tester
 } || echo "Switch_90DNS_tester download\033[31m failed\033[0m."
 
-### Fetch lastest DBI from https://github.com/rashevskyv/dbi/releases/tag/658
-latest_release_info=$(curl -sL https://api.github.com/repos/rashevskyv/dbi/releases/135856657)
-download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*DBI.nro' | sed 's/"//g')
+### Fetch lastest DBI from https://api.github.com/repos/gzk47/DBIPatcher/releases/latest
+latest_release_info=$(curl -sL https://api.github.com/repos/gzk47/DBIPatcher/releases/latest)
+download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*DBI.*.zhcn.nro' | sed 's/"//g')
 curl -sL "$download_url" -o DBI.nro && {
     echo "DBI download\033[32m success\033[0m."
     mv DBI.nro ./switch/DBI
 } || echo "DBI download\033[31m failed\033[0m."
 
-### Fetch lastest Awoo Installer from https://github.com/dragonflylee/Awoo-Installer/releases/latest
-# latest_release_info=$(curl -sL https://api.github.com/repos/dragonflylee/Awoo-Installer/releases/latest)
+### Fetch lastest Awoo Installer from https://github.com/Huntereb/Awoo-Installer/releases/latest
+# latest_release_info=$(curl -sL https://api.github.com/repos/Huntereb/Awoo-Installer/releases/latest)
 # download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*Awoo-Installer.zip' | sed 's/"//g')
 # curl -sL "$download_url" -o Awoo-Installer.zip && {
 #     echo "Awoo Installer download\033[32m success\033[0m."
@@ -358,12 +358,14 @@ curl -sL "$download_url" -o ldn_mitm.zip&& {
 } || echo "ldn_mitm download\033[31m failed\033[0m."
 
 ### Fetch emuiibo
-latest_release_info=$(curl -sL https://api.github.com/repos/zdm65477730/emuiibo/releases/latest)
+latest_release_info=$(curl -sL https://api.github.com/repos/XorTroll/emuiibo/releases/latest)
 download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*emuiibo.zip' | sed 's/"//g')
 curl -sL "$download_url" -o emuiibo.zip&& {
     echo "emuiibo download\033[32m success\033[0m."
     unzip -oq emuiibo.zip
+    cp -rf SdOut/* ./
     rm emuiibo.zip
+    rm -rf SdOut
 } || echo "emuiibo download\033[31m failed\033[0m."
 
 ### Fetch QuickNTP
@@ -384,25 +386,6 @@ curl -sL "$download_url" -o Fizeau.zip&& {
     rm Fizeau.zip
     rm config/Fizeau/config.ini
 } || echo "Fizeau download\033[31m failed\033[0m."
-
-### Fetch Zing
-curl -sL https://raw.githubusercontent.com/huangqian8/SwitchPlugins/main/plugins/Zing.zip -o Zing.zip
-if [ $? -ne 0 ]; then
-    echo "Zing download\033[31m failed\033[0m."
-else
-    echo "Zing download\033[32m success\033[0m."
-    unzip -oq Zing.zip
-    rm Zing.zip
-fi
-
-### Fetch lastest sys-tune from https://github.com/HookedBehemoth/sys-tune/releases/latest
-# latest_release_info=$(curl -sL https://api.github.com/repos/HookedBehemoth/sys-tune/releases/latest)
-# download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*sys-tune[^"]*.zip' | sed 's/"//g')
-# curl -sL "$download_url" -o sys-tune.zip&& {
-#    echo "sys-tune download\033[32m success\033[0m."
-#    unzip -oq sys-tune.zip
-#    rm sys-tune.zip
-# } || echo "sys-tune download\033[31m failed\033[0m."
 
 ### Fetch sys-patch from https://github.com/impeeza/sys-patch/releases/latest
 latest_release_info=$(curl -sL https://api.github.com/repos/zdm65477730/sys-patch/releases/latest)
@@ -486,7 +469,6 @@ ldn_mitm
 emuiibo
 QuickNTP
 Fizeau
-Zing
 sys-patch
 sys-clk-oc
 OC_Toolkit_SC_EOS
@@ -640,6 +622,8 @@ ease_nro_restriction = u8!0x1
 [atmosphere]
 ; 金手指默认关闭，按需开启更安全
 dmnt_cheats_enabled_by_default = u8!0x0
+; 如果你希望大气记住你上次金手指状态，请删除下方；号
+; dmnt_always_save_cheat_toggles = u8!0x1
 ; 崩溃10秒后自动重启 (10000毫秒)
 fatal_auto_reboot_interval = u64!0x2710
 ; 启用DNS屏蔽，阻止连接任天堂服务器
@@ -652,9 +636,14 @@ enable_external_bluetooth_db = u8!0x1
 ; 强制开启USB 3.0
 usb30_force_enabled = u8!0x1
 
+; 备份
+; tskin_rate_table_console = str!”[[-1000000, 28000, 0, 0], [28000, 42000, 0, 51], [42000, 48000, 51, 102], [48000, 55000, 102, 153], [55000, 60000, 153, 255], [60000, 68000, 255, 255]]”
+; tskin_rate_table_handheld = str!”[[-1000000, 28000, 0, 0], [28000, 42000, 0, 51], [42000, 48000, 51, 102], [48000, 55000, 102, 153], [55000, 60000, 153, 255], [60000, 68000, 255, 255]]”
 [tc]
-; 温控设置 - 保持默认即可
+; 温控设置
 sleep_enabled = u8!0x0
+tskin_rate_table_console = str!”[[-1000000, 28000, 0, 0], [28000, 42000, 0, 51], [42000, 48000, 51, 102], [48000, 55000, 102, 153], [55000, 60000, 153, 255], [60000, 68000, 255, 255]]”
+tskin_rate_table_handheld = str!”[[-1000000, 28000, 0, 0], [28000, 42000, 0, 51], [42000, 48000, 51, 102], [48000, 55000, 102, 153], [55000, 60000, 153, 255], [60000, 68000, 255, 255]]”
 
 ; =============================================
 ; 🛡 防封禁核心配置 - 禁用所有任天堂服务
