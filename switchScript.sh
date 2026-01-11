@@ -37,7 +37,6 @@ mkdir -p ./SwitchSD/switch/JKSV
 mkdir -p ./SwitchSD/switch/Moonlight
 # mkdir -p ./SwitchSD/switch/NXThemesInstaller
 mkdir -p ./SwitchSD/switch/SimpleModDownloader
-mkdir -p ./SwitchSD/switch/SimpleModManager
 # mkdir -p ./SwitchSD/switch/Switchfin
 # mkdir -p ./SwitchSD/switch/tencent-switcher-gui
 # mkdir -p ./SwitchSD/switch/wiliwili
@@ -228,16 +227,19 @@ curl -sL "$download_url" -o SimpleModDownloader.nro && {
     mv SimpleModDownloader.nro ./switch/SimpleModDownloader
 } || echo "SimpleModDownloader download\033[31m failed\033[0m."
 
-### Fetch lastest SimpleModManager from https://github.com/nadrino/SimpleModManager/releases/latest
-curl -sL https://api.github.com/repos/nadrino/SimpleModManager/releases/latest \
-  | grep -oP '"browser_download_url": "\Khttps://[^"]*SimpleModManager.nro"' \
+### Fetch lastest NXModManager from https://github.com/TOM-BadEN/NX-Mod-Manager/releases
+curl -sL https://api.github.com/repos/TOM-BadEN/NX-Mod-Manager/releases/latest \
+  | grep -oP '"browser_download_url": "\Khttps://[^"]*NX-Mod-Manage.For.Chinese[^"]*.zip"' \
   | sed 's/"//g' \
-  | xargs -I {} curl -sL {} -o SimpleModManager.nro
+  | xargs -I {} curl -sL {} -o NXModManager.zip
 if [ $? -ne 0 ]; then
-    echo "SimpleModManager download\033[31m failed\033[0m."
+    echo "NXModManager download\033[31m failed\033[0m."
 else
-    echo "SimpleModManager download\033[32m success\033[0m."
-    mv SimpleModManager.nro ./switch/SimpleModManager
+    echo "NXModManager download\033[32m success\033[0m."
+    unzip -oq -d ./NXModManager NXModManager.zip
+    cp -rf NXModManager/switch ./
+    rm NXModManager.zip
+    rm -rf NXModManager
 fi
 
 ### Fetch lastest Switchfin from https://github.com/dragonflylee/switchfin/releases/latest
@@ -421,13 +423,13 @@ fi
 ### Fetch lastest OC_Toolkit_SC_EOS from https://github.com/halop/OC_Toolkit_SC_EOS/releases/latest
 latest_release_info=$(curl -sL https://api.github.com/repos/halop/OC_Toolkit_SC_EOS/releases/latest)
 download_url_1=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*kip.zip' | sed 's/"//g')
-download_url_2=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*OC.Toolkit.u.zip' | sed 's/"//g')
-curl -sL "$download_url_1" -o kip.zip&&curl -sL "$download_url_2" -o OC.Toolkit.u.zip&& {
+download_url_2=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*OC.Toolkit.zip' | sed 's/"//g')
+curl -sL "$download_url_1" -o kip.zip&&curl -sL "$download_url_2" -o OC.Toolkit.zip&& {
     echo "OC_Toolkit_SC_EOS download\033[32m success\033[0m."
     unzip -oq kip.zip -d ./atmosphere/kips/
-    unzip -oq OC.Toolkit.u.zip -d ./switch/.packages/
+    unzip -oq OC.Toolkit.zip -d ./switch/.packages/
     rm kip.zip
-    rm OC.Toolkit.u.zip
+    rm OC.Toolkit.zip
 } || echo "OC_Toolkit_SC_EOS download\033[31m failed\033[0m."
 
 ### Fetch MissionControl from https://github.com/ndeadly/MissionControl/releases/latest
@@ -455,7 +457,7 @@ Hekate-Toolbox
 NX-Activity-Log
 JKSV
 SimpleModDownloader
-SimpleModManager
+NXModManager
 Moonlight
 NX-Shell
 daybreak

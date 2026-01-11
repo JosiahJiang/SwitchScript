@@ -24,7 +24,7 @@
     - [ ] ~~多工具合一任天堂Switch更新器 `aio-switch-updater` [From Here](https://github.com/HamletDuFromage/aio-switch-updater/releases/latest)~~
     - [ ] ~~第三方B站客户端 `wiliwili` [From Here](https://github.com/xfangfang/wiliwili/releases/latest)~~
     - [x] Mod下载器 `SimpleModDownloader` [From Here](https://github.com/PoloNX/SimpleModDownloader/releases/latest)
-    - [x] Mod管理器 `SimpleModManager` [From here](https://github.com/nadrino/SimpleModManager/releases/latest)
+    - [x] Mod管理器 `NXModManager` [From here](https://github.com/TOM-BadEN/NX-Mod-Manager/releases)
     - [ ] ~~Jellyfin客户端 `Switchfin` [From Here](https://github.com/dragonflylee/switchfin/releases/latest)~~
     - [x] 串流工具 `Moonlight` [From Here](https://github.com/XITRIX/Moonlight-Switch/releases/latest)
     - [x] 文件管理 `NX-Shell` [From Here](https://github.com/zdm65477730/NX-Shell/releases/latest)
@@ -71,6 +71,7 @@
   - 运行脚本（switchScript.sh）
 
 ## 更新日志
+- 2026-01-11 添加 `NXModManager`，去除`SimpleModManager`
 - 2026-01-08 去除 `Zing` 和 `sys-tune`，更新 `DBI` 、 `Awoo Installer` 及 `emuiibo` 仓库地址；调整为更积极的风扇曲线
 - 2025-11-05 更新 `system_settings.ini`
 - 2025-06-08 批量更新插件地址；精简代码，修正由于 `API` 限制而造成的运行错误
