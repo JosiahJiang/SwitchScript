@@ -21,7 +21,7 @@ mkdir -p ./SwitchSD/atmosphere/contents/0000000000534C56ReverseNX-RT
 mkdir -p ./SwitchSD/atmosphere/contents/4200000000000010ldn_mitm
 mkdir -p ./SwitchSD/atmosphere/contents/0100000000000352emuiibo
 mkdir -p ./SwitchSD/atmosphere/contents/0100000000000F12Fizeau
-mkdir -p ./SwitchSD/atmosphere/contents/4200000000000000sys-tune
+# mkdir -p ./SwitchSD/atmosphere/contents/4200000000000000sys-tune
 mkdir -p ./SwitchSD/atmosphere/contents/420000000000000Bsys-patch
 mkdir -p ./SwitchSD/atmosphere/contents/010000000000bd00MissionControl
 mkdir -p ./SwitchSD/atmosphere/contents/00FF0000636C6BFFsys-clk
@@ -502,7 +502,7 @@ bootprotect=0
 icon=bootloader/res/icon_ams.bmp
 payload=bootloader/payloads/fusee.bin
 
-{大气层-虚拟系统}
+{大气层-虚拟系统-极限超频}
 [CFW (emuMMC)]
 emummcforce=1
 fss0=atmosphere/package3
@@ -510,6 +510,14 @@ kip1=atmosphere/kips/loader.kip
 atmosphere=1
 icon=bootloader/res/icon_Atmosphere_emunand.bmp
 id=cfw-emu
+
+{大气层-虚拟系统-无超频}
+[CFW-NAOC (emuMMC)]
+emummcforce=1
+fss0=atmosphere/package3
+atmosphere=1
+icon=bootloader/res/icon_Atmosphere_emunand.bmp
+id=cfw_naoc-emu
 
 # {大气层-真实系统}
 # [CFW (sysMMC)]
@@ -636,14 +644,9 @@ enable_external_bluetooth_db = u8!0x1
 ; 强制开启USB 3.0
 usb30_force_enabled = u8!0x1
 
-; 备份
-; tskin_rate_table_console = str!”[[-1000000, 28000, 0, 0], [28000, 42000, 0, 51], [42000, 48000, 51, 102], [48000, 55000, 102, 153], [55000, 60000, 153, 255], [60000, 68000, 255, 255]]”
-; tskin_rate_table_handheld = str!”[[-1000000, 28000, 0, 0], [28000, 42000, 0, 51], [42000, 48000, 51, 102], [48000, 55000, 102, 153], [55000, 60000, 153, 255], [60000, 68000, 255, 255]]”
 [tc]
 ; 温控设置
 sleep_enabled = u8!0x0
-tskin_rate_table_console = str!”[[-1000000, 28000, 0, 0], [28000, 42000, 0, 51], [42000, 48000, 51, 102], [48000, 55000, 102, 153], [55000, 60000, 153, 255], [60000, 68000, 255, 255]]”
-tskin_rate_table_handheld = str!”[[-1000000, 28000, 0, 0], [28000, 42000, 0, 51], [42000, 48000, 51, 102], [48000, 55000, 102, 153], [55000, 60000, 153, 255], [60000, 68000, 255, 255]]”
 
 ; =============================================
 ; 🛡 防封禁核心配置 - 禁用所有任天堂服务
