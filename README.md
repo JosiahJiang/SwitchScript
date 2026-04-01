@@ -71,6 +71,7 @@
   - 运行脚本（switchScript.sh）
 
 ## 更新日志
+- 2026-04-01 更新 `Switch_90DNS_tester`
 - 2026-03-31 更新 `linkalho-v2.0.2`
 - 2026-01-11 添加 `NXModManager`，去除`SimpleModManager`
 - 2026-01-08 去除 `Zing` 和 `sys-tune`，更新 `DBI` 、 `Awoo Installer` 及 `emuiibo` 仓库地址；调整为更积极的风扇曲线

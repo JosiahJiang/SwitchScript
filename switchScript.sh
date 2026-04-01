@@ -127,12 +127,20 @@ else
 fi
 
 ### Fetch lastest Switch_90DNS_tester
-latest_release_info=$(curl -sL https://api.github.com/repos/meganukebmp/Switch_90DNS_tester/releases/latest)
-download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*Switch_90DNS_tester.nro' | sed 's/"//g')
-curl -sL "$download_url" -o Switch_90DNS_tester.nro && {
-    echo "Switch_90DNS_tester download\033[32m success\033[0m."
+# latest_release_info=$(curl -sL https://api.github.com/repos/meganukebmp/Switch_90DNS_tester/releases/latest)
+# download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*Switch_90DNS_tester.nro' | sed 's/"//g')
+# curl -sL "$download_url" -o Switch_90DNS_tester.nro && {
+#     echo "Switch_90DNS_tester download\033[32m success\033[0m."
+#     mv Switch_90DNS_tester.nro ./switch/Switch_90DNS_tester
+# } || echo "Switch_90DNS_tester download\033[31m failed\033[0m."
+
+curl -sL https://raw.github.com/JosiahJiang/SwitchScript/main/plugins/Switch_90DNS_tester.nro -o Switch_90DNS_tester.nro
+if [ $? -ne 0 ]; then
+    echo "Switch_90DNS_tester.nro download\033[31m failed\033[0m."
+else
+    echo "Switch_90DNS_tester.nro download\033[32m success\033[0m."
     mv Switch_90DNS_tester.nro ./switch/Switch_90DNS_tester
-} || echo "Switch_90DNS_tester download\033[31m failed\033[0m."
+fi
 
 ### Fetch lastest DBI from https://api.github.com/repos/gzk47/DBIPatcher/releases/latest
 latest_release_info=$(curl -sL https://api.github.com/repos/gzk47/DBIPatcher/releases/latest)
