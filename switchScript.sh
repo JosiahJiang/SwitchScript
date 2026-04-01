@@ -275,14 +275,14 @@ curl -sL "$download_url" -o NX-Shell.nro&& {
 # } || echo "hb-appstore download\033[31m failed\033[0m."
 
 ### Fetch daybreak_x
-curl -sL https://raw.githubusercontent.com/huangqian8/SwitchPlugins/main/plugins/daybreak_x.zip -o daybreak_x.zip
-if [ $? -ne 0 ]; then
-    echo "daybreak download\033[31m failed\033[0m."
-else
-    echo "daybreak download\033[32m success\033[0m."
-    unzip -oq daybreak_x.zip
-    rm daybreak_x.zip
-fi
+# curl -sL https://raw.githubusercontent.com/huangqian8/SwitchPlugins/main/plugins/daybreak_x.zip -o daybreak_x.zip
+# if [ $? -ne 0 ]; then
+#     echo "daybreak download\033[31m failed\033[0m."
+# else
+#     echo "daybreak download\033[32m success\033[0m."
+#     unzip -oq daybreak_x.zip
+#     rm daybreak_x.zip
+# fi
 
 ### Fetch lastest theme-patches from https://github.com/exelix11/theme-patches
 # git clone https://github.com/exelix11/theme-patches
@@ -475,7 +475,7 @@ sys-patch
 sys-clk-oc
 OC_Toolkit_SC_EOS
 MissionControl
-linkalho-v2.0.1
+linkalho-v2.0.2
 ENDOFFILE
 
 ### Rename hekate_ctcaer_*.bin to payload.bin
@@ -729,7 +729,7 @@ fi
 ### Delete unneeded files
 rm -f switch/haze.nro
 rm -f switch/reboot_to_payload.nro
-rm -f switch/daybreak.nro
+# rm -f switch/daybreak.nro
 
 # -------------------------------------------
 
