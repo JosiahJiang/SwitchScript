@@ -34,7 +34,7 @@ mkdir -p ./SwitchSD/switch/NX-Shell
 # mkdir -p ./SwitchSD/switch/HB-App-Store
 mkdir -p ./SwitchSD/switch/HekateToolbox
 mkdir -p ./SwitchSD/switch/JKSV
-mkdir -p ./SwitchSD/switch/Moonlight
+mkdir -p ./SwitchSD/switch/Moonlight-Switch
 # mkdir -p ./SwitchSD/switch/NXThemesInstaller
 mkdir -p ./SwitchSD/switch/SimpleModDownloader
 # mkdir -p ./SwitchSD/switch/Switchfin
@@ -263,7 +263,7 @@ latest_release_info=$(curl -sL https://api.github.com/repos/XITRIX/Moonlight-Swi
 download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*Moonlight-Switch.nro' | sed 's/"//g')
 curl -sL "$download_url" -o Moonlight-Switch.nro&& {
     echo "Moonlight download\033[32m success\033[0m."
-    mv Moonlight-Switch.nro ./switch/Moonlight
+    mv Moonlight-Switch.nro ./switch/Moonlight-Switch
 } || echo "Moonlight download\033[31m failed\033[0m."
 
 ### Fetch NX-Shell
