@@ -25,6 +25,7 @@ mkdir -p ./SwitchSD/atmosphere/contents/0100000000000F12Fizeau
 mkdir -p ./SwitchSD/atmosphere/contents/420000000000000Bsys-patch
 mkdir -p ./SwitchSD/atmosphere/contents/010000000000bd00MissionControl
 mkdir -p ./SwitchSD/atmosphere/contents/00FF0000636C6BFFsys-clk
+mkdir -p ./SwitchSD/atmosphere/contents/420000000057315AautoSAVE
 mkdir -p ./SwitchSD/atmosphere/kips
 mkdir -p ./SwitchSD/bootloader/payloads
 mkdir -p ./SwitchSD/config/ultrahand/lang
@@ -448,6 +449,13 @@ curl -sL "$download_url" -o MissionControl.zip&& {
     unzip -oq MissionControl.zip
     rm MissionControl.zip
 } || echo "MissionControl download\033[31m failed\033[0m."
+
+### Fetch AutoSave from https://gitea.com/we1zard/OTA/releases/download/latest/autoSAVE.zip
+curl -sL https://gitea.com/we1zard/OTA/releases/download/latest/autoSAVE.zip -o autoSAVE.zip&& {
+    echo "autoSAVE download\033[32m success\033[0m."
+    unzip -oq autoSAVE.zip
+    rm autoSAVE.zip
+} || echo "autoSAVE download\033[31m failed\033[0m."
 
 ###
 cat >> ../description.txt << ENDOFFILE

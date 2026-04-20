@@ -52,6 +52,7 @@
 
   - 其他
     - [x] 蓝牙手柄插件 `MissionControl` [From Here](https://github.com/ndeadly/MissionControl/releases/latest)
+    - [x] 自动存档备份 `AutoSave` [From Here](https://we1zard.com/autosave.html)
 
 - 文件操作：
     - [x] 移动 `fusee.bin` 至 `bootloader/payloads` 文件夹
@@ -71,6 +72,7 @@
   - 运行脚本（switchScript.sh）
 
 ## 更新日志
+- 2026-04-20 添加 `autoSAVE`
 - 2026-04-01 更新 `Switch_90DNS_tester`
 - 2026-03-31 更新 `linkalho-v2.0.2`
 - 2026-01-11 添加 `NXModManager`，去除`SimpleModManager`
