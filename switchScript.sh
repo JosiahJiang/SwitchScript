@@ -275,6 +275,15 @@ curl -sL "$download_url" -o NX-Shell.nro&& {
     mv NX-Shell.nro ./switch/NX-Shell
 } || echo "NX-Shell download\033[31m failed\033[0m."
 
+### Fetch Sphaira From https://github.com/ITotalJustice/sphaira/releases/latest
+latest_release_info=$(curl -sL https://api.github.com/repos/ITotalJustice/sphaira/releases/latest)
+download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*sphaira.zip' | sed 's/"//g')
+curl -sL "$download_url" -o sphaira.zip&& {
+    echo "Sphaira download\033[32m success\033[0m."
+    unzip -oq sphaira.zip
+    rm sphaira.zip
+} || echo "Sphaira download\033[31m failed\033[0m."
+
 ### Fetch lastest hb-appstore from https://github.com/fortheusers/hb-appstore/releases/latest
 # latest_release_info=$(curl -sL https://api.github.com/repos/fortheusers/hb-appstore/releases/latest)
 # download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*appstore.nro' | sed 's/"//g')
@@ -492,6 +501,8 @@ sys-clk-oc
 OC_Toolkit_SC_EOS
 MissionControl
 linkalho-v2.0.2
+autoSave
+Sphaira
 ENDOFFILE
 
 ### Rename hekate_ctcaer_*.bin to payload.bin

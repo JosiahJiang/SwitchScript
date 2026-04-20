@@ -31,6 +31,7 @@
     - [ ] ~~黑商店 `hb-appstore`  [From Here](https://github.com/fortheusers/hb-appstore/releases/latest)~~
     - [x] 系统升级工具 `daybreak`  [From Here](https://www.tekqart.com/thread-258184-1-1.html)
     - [x] 账户绑定工具 `linkalho` [From Here](https://gbatemp.net/download/linkalho.38822/)
+    - [x] Homebrew 启动器 `Sphaira` [From Here](https://github.com/ITotalJustice/sphaira/releases/latest)
 
   - 补丁
     - [ ] ~~主题破解 `theme-patches` [From Here](https://github.com/exelix11/theme-patches)~~
@@ -72,7 +73,7 @@
   - 运行脚本（switchScript.sh）
 
 ## 更新日志
-- 2026-04-20 添加 `autoSAVE`
+- 2026-04-20 添加 `autoSAVE`、`Sphaira`启动器
 - 2026-04-01 更新 `Switch_90DNS_tester`
 - 2026-03-31 更新 `linkalho-v2.0.2`
 - 2026-01-11 添加 `NXModManager`，去除`SimpleModManager`
