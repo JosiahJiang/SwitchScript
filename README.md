@@ -15,20 +15,20 @@
   - Nro插件
     - [x] 联网检测是否屏蔽任天堂服务器 `Switch_90DNS_tester` [From Here](https://github.com/meganukebmp/Switch_90DNS_tester/releases/latest)
     - [x] 游戏安装，存档管理和文件传输工具 `DBI` [From Here](https://github.com/gzk47/DBIPatcher/releases/latest)
-    - [ ] ~~游戏安装和文件传输工具 `Awoo Installer` [From Here](https://github.com/Huntereb/Awoo-Installer/releases/latest)~~
+    <!-- - [ ] ~~游戏安装和文件传输工具 `Awoo Installer` [From Here](https://github.com/Huntereb/Awoo-Installer/releases/latest)~~ -->
     - [x] 深海工具箱 `Hekate-toolbox` [From Here](https://github.com/WerWolv/Hekate-Toolbox/releases/latest)
     - [x] 游戏游玩时间记录工具 `NX-Activity-Log` [From Here](https://github.com/zdm65477730/NX-Activity-Log/releases/latest)
     - [x] 主题安装工具 `NXThemesInstaller` [From Here](https://github.com/exelix11/SwitchThemeInjector/releases/latest)
     - [x] 游戏存档管理工具 `JKSV` [From Here](https://github.com/J-D-K/JKSV/releases/latest)
-    - [ ] ~~系统切换工具 `tencent-switcher-gui` [From Here](https://github.com/CaiMiao/Tencent-switcher-GUI/releases/latest)~~
-    - [ ] ~~多工具合一任天堂Switch更新器 `aio-switch-updater` [From Here](https://github.com/HamletDuFromage/aio-switch-updater/releases/latest)~~
-    - [ ] ~~第三方B站客户端 `wiliwili` [From Here](https://github.com/xfangfang/wiliwili/releases/latest)~~
+    <!-- - [ ] ~~系统切换工具 `tencent-switcher-gui` [From Here](https://github.com/CaiMiao/Tencent-switcher-GUI/releases/latest)~~ -->
+    <!-- - [ ] ~~多工具合一任天堂Switch更新器 `aio-switch-updater` [From Here](https://github.com/HamletDuFromage/aio-switch-updater/releases/latest)~~ -->
+    <!-- - [ ] ~~第三方B站客户端 `wiliwili` [From Here](https://github.com/xfangfang/wiliwili/releases/latest)~~ -->
     - [x] Mod下载器 `SimpleModDownloader` [From Here](https://github.com/PoloNX/SimpleModDownloader/releases/latest)
     - [x] Mod管理器 `NXModManager` [From here](https://github.com/TOM-BadEN/NX-Mod-Manager/releases)
-    - [ ] ~~Jellyfin客户端 `Switchfin` [From Here](https://github.com/dragonflylee/switchfin/releases/latest)~~
+    <!-- - [ ] ~~Jellyfin客户端 `Switchfin` [From Here](https://github.com/dragonflylee/switchfin/releases/latest)~~ -->
     - [x] 串流工具 `Moonlight` [From Here](https://github.com/XITRIX/Moonlight-Switch/releases/latest)
     - [x] 文件管理 `NX-Shell` [From Here](https://github.com/zdm65477730/NX-Shell/releases/latest)
-    - [ ] ~~黑商店 `hb-appstore`  [From Here](https://github.com/fortheusers/hb-appstore/releases/latest)~~
+    <!-- - [ ] ~~黑商店 `hb-appstore`  [From Here](https://github.com/fortheusers/hb-appstore/releases/latest)~~ -->
     - [x] 系统升级工具 `daybreak`  [From Here](https://www.tekqart.com/thread-258184-1-1.html)
     - [x] 账户绑定工具 `linkalho` [From Here](https://gbatemp.net/download/linkalho.38822/)
     - [x] Homebrew 启动器 `Sphaira` [From Here](https://github.com/ITotalJustice/sphaira/releases/latest)
@@ -41,15 +41,15 @@
   - Ovl插件
     - [x] 金手指工具 `EdiZon` [From Here](https://github.com/zdm65477730/EdiZon-Overlay/releases/latest)
     - [x] 系统模块 `ovl-sysmodules` [From Here](https://github.com/zdm65477730/ovl-sysmodules/releases/latest)
-    - [ ] ~~系统监视 `StatusMonitor` [From Here](https://github.com/zdm65477730/Status-Monitor-Overlay/releases/latest)~~
+    <!-- - [ ] ~~系统监视 `StatusMonitor` [From Here](https://github.com/zdm65477730/Status-Monitor-Overlay/releases/latest)~~ -->
     - [x] 掌机底座模式切换 `ReverseNX-RT` [From Here](https://github.com/zdm65477730/ReverseNX-RT/releases/latest)
     - [x] 局域网联机 `ldn_mitm` [From Here](https://github.com/zdm65477730/ldn_mitm/releases/latest)
     - [x] 虚拟Amiibo `emuiibo` [From Here](https://github.com/XorTroll/emuiibo/releases/latest)
     - [x] 时间同步 `QuickNTP` [From Here](https://github.com/zdm65477730/QuickNTP/releases/latest)
     - [x] 色彩调整 `Fizeau` [From Here](https://github.com/zdm65477730/Fizeau/releases/latest)
     - [x] 系统补丁 `sys-patch` [From Here](https://github.com/zdm65477730/sys-patch/releases/latest)
-    - [ ] ~~超频插件 `sys-clk` [From Here](https://github.com/zdm65477730/sys-clk/releases/latest)~~
-    - [ ] ~~调频插件 `OC Toolkit` [From Here](https://github.com/halop/OC_Toolkit_SC_EOS/releases/latest)~~
+    <!-- - [ ] ~~超频插件 `sys-clk` [From Here](https://github.com/zdm65477730/sys-clk/releases/latest)~~ -->
+    <!-- - [ ] ~~调频插件 `OC Toolkit` [From Here](https://github.com/halop/OC_Toolkit_SC_EOS/releases/latest)~~ -->
     - [x] 极限超频插件 `Horizon-OC` [From Here](https://github.com/Horizon-OC/Horizon-OC/releases/latest)
 
   - 其他
@@ -66,7 +66,6 @@
     - [x] 在 `atmosphere/config` 文件夹中创建 `override_config.ini`
     - [x] 在 `atmosphere/config` 文件夹中创建 `system_settings.ini`
     - [x] 删除 `switch` 文件夹中 `haze.nro`
-    - [x] 删除 `switch` 文件夹中 `daybreak.nro`
     - [x] 删除 `switch` 文件夹中 `reboot_to_payload.nro`
 
 ## 使用说明（仅适用于 `Linux` ，科学上网环境）:
