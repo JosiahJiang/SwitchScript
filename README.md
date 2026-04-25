@@ -41,15 +41,16 @@
   - Ovl插件
     - [x] 金手指工具 `EdiZon` [From Here](https://github.com/zdm65477730/EdiZon-Overlay/releases/latest)
     - [x] 系统模块 `ovl-sysmodules` [From Here](https://github.com/zdm65477730/ovl-sysmodules/releases/latest)
-    - [x] 系统监视 `StatusMonitor` [From Here](https://github.com/zdm65477730/Status-Monitor-Overlay/releases/latest)
+    - [ ] ~~系统监视 `StatusMonitor` [From Here](https://github.com/zdm65477730/Status-Monitor-Overlay/releases/latest)~~
     - [x] 掌机底座模式切换 `ReverseNX-RT` [From Here](https://github.com/zdm65477730/ReverseNX-RT/releases/latest)
     - [x] 局域网联机 `ldn_mitm` [From Here](https://github.com/zdm65477730/ldn_mitm/releases/latest)
     - [x] 虚拟Amiibo `emuiibo` [From Here](https://github.com/XorTroll/emuiibo/releases/latest)
     - [x] 时间同步 `QuickNTP` [From Here](https://github.com/zdm65477730/QuickNTP/releases/latest)
     - [x] 色彩调整 `Fizeau` [From Here](https://github.com/zdm65477730/Fizeau/releases/latest)
     - [x] 系统补丁 `sys-patch` [From Here](https://github.com/zdm65477730/sys-patch/releases/latest)
-    - [x] 超频插件 `sys-clk` [From Here](https://github.com/zdm65477730/sys-clk/releases/latest)
-    - [x] 调频插件 `OC Toolkit` [From Here](https://github.com/halop/OC_Toolkit_SC_EOS/releases/latest)
+    - [ ] ~~超频插件 `sys-clk` [From Here](https://github.com/zdm65477730/sys-clk/releases/latest)~~
+    - [ ] ~~调频插件 `OC Toolkit` [From Here](https://github.com/halop/OC_Toolkit_SC_EOS/releases/latest)~~
+    - [x] 极限超频插件 `Horizon-OC` [From Here](https://github.com/Horizon-OC/Horizon-OC/releases/latest)
 
   - 其他
     - [x] 蓝牙手柄插件 `MissionControl` [From Here](https://github.com/ndeadly/MissionControl/releases/latest)
@@ -73,7 +74,7 @@
   - 运行脚本（switchScript.sh）
 
 ## 更新日志
-- 2026-04-25 恢复主题功能 `theme-patches`、`NXThemesInstaller`
+- 2026-04-25 恢复主题功能 `theme-patches`、`NXThemesInstaller`；极限超频插件改为 `Horizon-OC`，删除 `StatusMonitor`、`sys-clk-oc`、`OC Toolkit`（已停止维护）
 - 2026-04-20 添加 `autoSAVE`、`Sphaira`启动器
 - 2026-04-01 更新 `Switch_90DNS_tester`
 - 2026-03-31 更新 `linkalho-v2.0.2`

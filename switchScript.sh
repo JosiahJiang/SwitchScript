@@ -350,13 +350,13 @@ curl -sL "$download_url" -o ovl-sysmodules.zip&& {
 } || echo "ovl-sysmodules download\033[31m failed\033[0m."
 
 ### Fetch StatusMonitor
-latest_release_info=$(curl -sL https://api.github.com/repos/zdm65477730/Status-Monitor-Overlay/releases/latest)
-download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*StatusMonitor.zip' | sed 's/"//g')
-curl -sL "$download_url" -o StatusMonitor.zip&& {
-    echo "StatusMonitor download\033[32m success\033[0m."
-    unzip -oq StatusMonitor.zip
-    rm StatusMonitor.zip
-} || echo "StatusMonitor download\033[31m failed\033[0m."
+# latest_release_info=$(curl -sL https://api.github.com/repos/zdm65477730/Status-Monitor-Overlay/releases/latest)
+# download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*StatusMonitor.zip' | sed 's/"//g')
+# curl -sL "$download_url" -o StatusMonitor.zip&& {
+#     echo "StatusMonitor download\033[32m success\033[0m."
+#     unzip -oq StatusMonitor.zip
+#     rm StatusMonitor.zip
+# } || echo "StatusMonitor download\033[31m failed\033[0m."
 
 ### Fetch ReverseNX-RT
 latest_release_info=$(curl -sL https://api.github.com/repos/zdm65477730/ReverseNX-RT/releases/latest)
@@ -426,29 +426,38 @@ curl -sL "$download_url" -o sys-patch.zip&& {
 # } || echo "sys-clk download\033[31m failed\033[0m."
 
 ### Fetch sys-clk-oc from https://github.com/halop/OC_Toolkit_SC_EOS/releases/latest
-curl -sL https://api.github.com/repos/halop/OC_Toolkit_SC_EOS/releases/latest \
-  | grep -oP '"browser_download_url": "\Khttps://[^"]*sys-clk[^"]*.zip"' \
-  | sed 's/"//g' \
-  | xargs -I {} curl -sL {} -o sys-clk-oc.zip
-if [ $? -ne 0 ]; then
-    echo "sys-clk-oc download\033[31m failed\033[0m."
-else
-    echo "sys-clk-oc download\033[32m success\033[0m."
-    unzip -oq sys-clk-oc.zip
-    rm sys-clk-oc.zip
-fi
+# curl -sL https://api.github.com/repos/halop/OC_Toolkit_SC_EOS/releases/latest \
+#   | grep -oP '"browser_download_url": "\Khttps://[^"]*sys-clk[^"]*.zip"' \
+#   | sed 's/"//g' \
+#   | xargs -I {} curl -sL {} -o sys-clk-oc.zip
+# if [ $? -ne 0 ]; then
+#     echo "sys-clk-oc download\033[31m failed\033[0m."
+# else
+#     echo "sys-clk-oc download\033[32m success\033[0m."
+#     unzip -oq sys-clk-oc.zip
+#     rm sys-clk-oc.zip
+# fi
 
 ### Fetch lastest OC_Toolkit_SC_EOS from https://github.com/halop/OC_Toolkit_SC_EOS/releases/latest
-latest_release_info=$(curl -sL https://api.github.com/repos/halop/OC_Toolkit_SC_EOS/releases/latest)
-download_url_1=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*kip.zip' | sed 's/"//g')
-download_url_2=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*OC.Toolkit.zip' | sed 's/"//g')
-curl -sL "$download_url_1" -o kip.zip&&curl -sL "$download_url_2" -o OC.Toolkit.zip&& {
-    echo "OC_Toolkit_SC_EOS download\033[32m success\033[0m."
-    unzip -oq kip.zip -d ./atmosphere/kips/
-    unzip -oq OC.Toolkit.zip -d ./switch/.packages/
-    rm kip.zip
-    rm OC.Toolkit.zip
-} || echo "OC_Toolkit_SC_EOS download\033[31m failed\033[0m."
+# latest_release_info=$(curl -sL https://api.github.com/repos/halop/OC_Toolkit_SC_EOS/releases/latest)
+# download_url_1=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*kip.zip' | sed 's/"//g')
+# download_url_2=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*OC.Toolkit.zip' | sed 's/"//g')
+# curl -sL "$download_url_1" -o kip.zip&&curl -sL "$download_url_2" -o OC.Toolkit.zip&& {
+#     echo "OC_Toolkit_SC_EOS download\033[32m success\033[0m."
+#     unzip -oq kip.zip -d ./atmosphere/kips/
+#     unzip -oq OC.Toolkit.zip -d ./switch/.packages/
+#     rm kip.zip
+#     rm OC.Toolkit.zip
+# } || echo "OC_Toolkit_SC_EOS download\033[31m failed\033[0m."
+
+### Fetch Horizon-OC from https://github.com/Horizon-OC/Horizon-OC/releases/latest
+latest_release_info=$(curl -sL https://api.github.com/repos/Horizon-OC/Horizon-OC/releases/latest)
+download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*dist.zip' | sed 's/"//g')
+curl -sL "$download_url" -o HOC.zip&& {
+    echo "Horizon-OC download\033[32m success\033[0m."
+    unzip -oq HOC.zip
+    rm HOC.zip README.md
+} || echo "Horizon-OC download\033[31m failed\033[0m."
 
 ### Fetch MissionControl from https://github.com/ndeadly/MissionControl/releases/latest
 latest_release_info=$(curl -sL https://api.github.com/repos/ndeadly/MissionControl/releases/latest)
@@ -490,15 +499,13 @@ nx-ovlloader
 Ultrahand-Overlay
 EdiZon
 ovl-sysmodules
-StatusMonitor
 ReverseNX-RT
 ldn_mitm
 emuiibo
 QuickNTP
 Fizeau
 sys-patch
-sys-clk-oc
-OC_Toolkit_SC_EOS
+Horizon-OC
 MissionControl
 linkalho-v2.0.2
 autoSave
@@ -537,7 +544,7 @@ payload=bootloader/payloads/fusee.bin
 [CFW (emuMMC)]
 emummcforce=1
 fss0=atmosphere/package3
-kip1=atmosphere/kips/loader.kip
+kip1=atmosphere/kips/hoc.kip
 atmosphere=1
 icon=bootloader/res/icon_Atmosphere_emunand.bmp
 id=cfw-emu
