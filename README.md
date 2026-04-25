@@ -18,7 +18,7 @@
     - [ ] ~~游戏安装和文件传输工具 `Awoo Installer` [From Here](https://github.com/Huntereb/Awoo-Installer/releases/latest)~~
     - [x] 深海工具箱 `Hekate-toolbox` [From Here](https://github.com/WerWolv/Hekate-Toolbox/releases/latest)
     - [x] 游戏游玩时间记录工具 `NX-Activity-Log` [From Here](https://github.com/zdm65477730/NX-Activity-Log/releases/latest)
-    - [ ] ~~主题安装工具 `NXThemesInstaller` [From Here](https://github.com/exelix11/SwitchThemeInjector/releases/latest)~~
+    - [x] 主题安装工具 `NXThemesInstaller` [From Here](https://github.com/exelix11/SwitchThemeInjector/releases/latest)
     - [x] 游戏存档管理工具 `JKSV` [From Here](https://github.com/J-D-K/JKSV/releases/latest)
     - [ ] ~~系统切换工具 `tencent-switcher-gui` [From Here](https://github.com/CaiMiao/Tencent-switcher-GUI/releases/latest)~~
     - [ ] ~~多工具合一任天堂Switch更新器 `aio-switch-updater` [From Here](https://github.com/HamletDuFromage/aio-switch-updater/releases/latest)~~
@@ -34,7 +34,7 @@
     - [x] Homebrew 启动器 `Sphaira` [From Here](https://github.com/ITotalJustice/sphaira/releases/latest)
 
   - 补丁
-    - [ ] ~~主题破解 `theme-patches` [From Here](https://github.com/exelix11/theme-patches)~~
+    - [x] 主题破解 `theme-patches` [From Here](https://github.com/exelix11/theme-patches)
   - Ultrahand
     - [x] 加载器 `nx-ovlloader` [From Here](https://github.com/zdm65477730/nx-ovlloader/releases/latest)
     - [x] 菜单 `Ultrahand-Overlay` [From Here](https://github.com/zdm65477730/Ultrahand-Overlay/releases/latest)
@@ -73,6 +73,7 @@
   - 运行脚本（switchScript.sh）
 
 ## 更新日志
+- 2026-04-25 恢复主题功能 `theme-patches`、`NXThemesInstaller`
 - 2026-04-20 添加 `autoSAVE`、`Sphaira`启动器
 - 2026-04-01 更新 `Switch_90DNS_tester`
 - 2026-03-31 更新 `linkalho-v2.0.2`

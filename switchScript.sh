@@ -21,7 +21,6 @@ mkdir -p ./SwitchSD/atmosphere/contents/0000000000534C56ReverseNX-RT
 mkdir -p ./SwitchSD/atmosphere/contents/4200000000000010ldn_mitm
 mkdir -p ./SwitchSD/atmosphere/contents/0100000000000352emuiibo
 mkdir -p ./SwitchSD/atmosphere/contents/0100000000000F12Fizeau
-# mkdir -p ./SwitchSD/atmosphere/contents/4200000000000000sys-tune
 mkdir -p ./SwitchSD/atmosphere/contents/420000000000000Bsys-patch
 mkdir -p ./SwitchSD/atmosphere/contents/010000000000bd00MissionControl
 mkdir -p ./SwitchSD/atmosphere/contents/00FF0000636C6BFFsys-clk
@@ -36,7 +35,7 @@ mkdir -p ./SwitchSD/switch/NX-Shell
 mkdir -p ./SwitchSD/switch/HekateToolbox
 mkdir -p ./SwitchSD/switch/JKSV
 mkdir -p ./SwitchSD/switch/Moonlight-Switch
-# mkdir -p ./SwitchSD/switch/NXThemesInstaller
+mkdir -p ./SwitchSD/switch/NXThemesInstaller
 mkdir -p ./SwitchSD/switch/SimpleModDownloader
 # mkdir -p ./SwitchSD/switch/Switchfin
 # mkdir -p ./SwitchSD/switch/tencent-switcher-gui
@@ -177,12 +176,12 @@ curl -sL "$download_url" -o NX-Activity-Log.nro && {
 } || echo "NX-Activity-Log download\033[31m failed\033[0m."
 
 ### Fetch lastest NXThemesInstaller from https://github.com/exelix11/SwitchThemeInjector/releases/latest
-# latest_release_info=$(curl -sL https://api.github.com/repos/exelix11/SwitchThemeInjector/releases/latest)
-# download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*NXThemesInstaller.nro' | sed 's/"//g')
-# curl -sL "$download_url" -o NXThemesInstaller.nro && {
-#    echo "NXThemesInstaller download\033[32m success\033[0m."
-#    mv NXThemesInstaller.nro ./switch/NXThemesInstaller
-# } || echo "NXThemesInstaller download\033[31m failed\033[0m."
+latest_release_info=$(curl -sL https://api.github.com/repos/exelix11/SwitchThemeInjector/releases/latest)
+download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*NXThemesInstaller.nro' | sed 's/"//g')
+curl -sL "$download_url" -o NXThemesInstaller.nro && {
+   echo "NXThemesInstaller download\033[32m success\033[0m."
+   mv NXThemesInstaller.nro ./switch/NXThemesInstaller
+} || echo "NXThemesInstaller download\033[31m failed\033[0m."
 
 ### Fetch lastest JKSV from https://github.com/J-D-K/JKSV/releases/latest
 latest_release_info=$(curl -sL https://api.github.com/repos/J-D-K/JKSV/releases/latest)
@@ -303,15 +302,15 @@ curl -sL "$download_url" -o sphaira.zip&& {
 # fi
 
 ### Fetch lastest theme-patches from https://github.com/exelix11/theme-patches
-# git clone https://github.com/exelix11/theme-patches
-# if [ $? -ne 0 ]; then
-#     echo "theme-patches download\033[31m failed\033[0m."
-# else
-#     echo "theme-patches download\033[32m success\033[0m."
-#     mkdir themes
-#     mv -f theme-patches/systemPatches ./themes/
-#     rm -rf theme-patches
-# fi
+git clone https://github.com/exelix11/theme-patches
+if [ $? -ne 0 ]; then
+    echo "theme-patches download\033[31m failed\033[0m."
+else
+    echo "theme-patches download\033[32m success\033[0m."
+    mkdir themes
+    mv -f theme-patches/systemPatches ./themes/
+    rm -rf theme-patches
+fi
 
 ### Fetch nx-ovlloader
 latest_release_info=$(curl -sL https://api.github.com/repos/zdm65477730/nx-ovlloader/releases/latest)
@@ -375,6 +374,7 @@ curl -sL "$download_url" -o ldn_mitm.zip&& {
     echo "ldn_mitm download\033[32m success\033[0m."
     unzip -oq ldn_mitm.zip
     rm ldn_mitm.zip
+    rm -f atmosphere/contents/4200000000000010/flags/boot2.flag #disabled by default
 } || echo "ldn_mitm download\033[31m failed\033[0m."
 
 ### Fetch emuiibo
@@ -503,6 +503,8 @@ MissionControl
 linkalho-v2.0.2
 autoSave
 Sphaira
+NXThemesInstaller
+theme-patches
 ENDOFFILE
 
 ### Rename hekate_ctcaer_*.bin to payload.bin
