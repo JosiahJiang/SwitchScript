@@ -73,7 +73,7 @@
   - 运行脚本（switchScript.sh）
 
 ## 更新日志
-- 2026-04-25 恢复主题功能 `theme-patches`、`NXThemesInstaller`
+- 2026-04-25 恢复主题功能 `theme-patches`、`NXThemesInstaller`；极限超频插件改为 `Horizon-OC`，删除 `StatusMonitor`、`sys-clk-oc`、`OC Toolkit`（已停止维护）
 - 2026-04-20 添加 `autoSAVE`、`Sphaira`启动器
 - 2026-04-01 更新 `Switch_90DNS_tester`
 - 2026-03-31 更新 `linkalho-v2.0.2`
