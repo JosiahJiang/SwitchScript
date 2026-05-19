@@ -198,13 +198,11 @@ curl -sL "$download_url" -o SimpleModDownloader.nro && {
 
 ### Fetch lastest NXModManager from https://github.com/TOM-BadEN/NX-Mod-Manager/releases
 latest_release_info=$(curl -sL https://api.github.com/repos/TOM-BadEN/NX-Mod-Manager/releases/latest)
-download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*NX-Mod-Manage.For.Chinese[^"]*.zip' | sed 's/"//g')
-curl -sL "$download_url" -o NXModManager.zip && {
+download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*NX-Mod-Manager.nro' | sed 's/"//g')
+curl -sL "$download_url" -o NX-Mod-Manager.nro && {
     echo -e "NXModManager download\033[32m success\033[0m."
-    unzip -oq -d ./NXModManager NXModManager.zip
-    cp -rf NXModManager/switch ./
-    rm NXModManager.zip
-    rm -rf NXModManager
+    mkdir -p ./switch/NX-Mod-Manager
+    mv NX-Mod-Manager.nro ./switch/NX-Mod-Manager
     record_item "NX-Mod-Manager" "$(jq -r '.tag_name // "unknown"' <<< "$latest_release_info")"
 } || echo -e "NXModManager download\033[31m failed\033[0m."
 
