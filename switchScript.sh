@@ -197,14 +197,14 @@ curl -sL "$download_url" -o SimpleModDownloader.nro && {
 } || echo -e "SimpleModDownloader download\033[31m failed\033[0m."
 
 ### Fetch lastest NXModManager from https://github.com/TOM-BadEN/NX-Mod-Manager/releases
-latest_release_info=$(curl -sL https://api.github.com/repos/TOM-BadEN/NX-Mod-Manager/releases/latest)
-download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*NX-Mod-Manager.nro' | sed 's/"//g')
-curl -sL "$download_url" -o NX-Mod-Manager.nro && {
-    echo -e "NXModManager download\033[32m success\033[0m."
-    mkdir -p ./switch/NX-Mod-Manager
-    mv NX-Mod-Manager.nro ./switch/NX-Mod-Manager
-    record_item "NX-Mod-Manager" "$(jq -r '.tag_name // "unknown"' <<< "$latest_release_info")"
-} || echo -e "NXModManager download\033[31m failed\033[0m."
+# latest_release_info=$(curl -sL https://api.github.com/repos/TOM-BadEN/NX-Mod-Manager/releases/latest)
+# download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*NX-Mod-Manager.nro' | sed 's/"//g')
+# curl -sL "$download_url" -o NX-Mod-Manager.nro && {
+#     echo -e "NXModManager download\033[32m success\033[0m."
+#     mkdir -p ./switch/NX-Mod-Manager
+#     mv NX-Mod-Manager.nro ./switch/NX-Mod-Manager
+#     record_item "NX-Mod-Manager" "$(jq -r '.tag_name // "unknown"' <<< "$latest_release_info")"
+# } || echo -e "NXModManager download\033[31m failed\033[0m."
 
 ### Fetch lastest Moonlight from https://github.com/XITRIX/Moonlight-Switch/releases/latest
 latest_release_info=$(curl -sL https://api.github.com/repos/XITRIX/Moonlight-Switch/releases/latest)

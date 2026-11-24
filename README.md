@@ -24,7 +24,7 @@
     <!-- - [ ] ~~多工具合一任天堂Switch更新器 `aio-switch-updater` [From Here](https://github.com/HamletDuFromage/aio-switch-updater/releases/latest)~~ -->
     <!-- - [ ] ~~第三方B站客户端 `wiliwili` [From Here](https://github.com/xfangfang/wiliwili/releases/latest)~~ -->
     - [x] Mod下载器 `SimpleModDownloader` [From Here](https://github.com/PoloNX/SimpleModDownloader/releases/latest)
-    - [x] Mod管理器 `NXModManager` [From here](https://github.com/TOM-BadEN/NX-Mod-Manager/releases)
+    <!-- - [x] Mod管理器 `NXModManager` [From here](https://github.com/TOM-BadEN/NX-Mod-Manager/releases) -->
     <!-- - [ ] ~~Jellyfin客户端 `Switchfin` [From Here](https://github.com/dragonflylee/switchfin/releases/latest)~~ -->
     - [x] 串流工具 `Moonlight` [From Here](https://github.com/XITRIX/Moonlight-Switch/releases/latest)
     - [x] 文件管理 `NX-Shell` [From Here](https://github.com/zdm65477730/NX-Shell/releases/latest)
@@ -73,6 +73,7 @@
   - 运行脚本（switchScript.sh）
 
 ## 更新日志
+- 2026-11-24 去除 `NXModManager`
 - 2026-04-25 恢复主题功能 `theme-patches`、`NXThemesInstaller`；极限超频插件改为 `Horizon-OC`，删除 `StatusMonitor`、`sys-clk-oc`、`OC Toolkit`（已停止维护）
 - 2026-04-20 添加 `autoSAVE`、`Sphaira`启动器
 - 2026-04-01 更新 `Switch_90DNS_tester`
