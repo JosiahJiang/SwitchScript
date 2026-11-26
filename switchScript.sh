@@ -772,6 +772,11 @@ fi
 rm -f switch/haze.nro
 rm -f switch/reboot_to_payload.nro
 
+### Delete boot2.flag
+rm -f atmosphere/contents/420000000057315A/flags/boot2.flag #AutoSave
+rm -f atmosphere/contents/4200000000000010/flags/boot2.flag #ldn_mitm
+rm -f atmosphere/contents/010000000000bd00/flags/boot2.flag #MissionControl
+
 # -------------------------------------------
 
 echo ""
