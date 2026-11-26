@@ -124,7 +124,7 @@ curl -sL "$download_url" -o CommonProblemResolver.bin && {
 } || echo -e "CommonProblemResolver download\033[31m failed\033[0m."
 
 ### Fetch latest picofly_toolbox_0.2.bin from
-curl -sL https://raw.github.com/Ansem-SoD/Picofly/main/Firmwares/picofly_toolbox_0.2.bin -o picofly_toolbox_0.2.bin && {
+curl -sL https://raw.github.com/JosiahJiang/SwitchScript/main/plugins/picofly_toolbox_0.2.bin -o picofly_toolbox_0.2.bin && {
     echo -e "picofly_toolbox download\033[32m success\033[0m."
     mv picofly_toolbox_0.2.bin ./bootloader/payloads
     record_item "picofly_toolbox" "v0.2"
@@ -144,12 +144,15 @@ curl -sL https://raw.github.com/JosiahJiang/SwitchScript/main/plugins/Switch_90D
     record_item "Switch_90DNS_tester" "v1.0.4"
 } || echo -e "Switch_90DNS_tester.nro download\033[31m failed\033[0m."
 
-### Fetch lastest DBI from https://api.github.com/repos/gzk47/DBIPatcher/releases/latest
-latest_release_info=$(curl -sL https://api.github.com/repos/gzk47/DBIPatcher/releases/latest)
-download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*DBI.*.zhcn.nro' | sed 's/"//g')
-curl -sL "$download_url" -o DBI.nro && {
+### Fetch lastest DBI from https://github.com/rashevskyv/DBIPatcher/releases/
+latest_release_info=$(curl -sL https://api.github.com/repos/rashevskyv/DBIPatcher/releases/latest)
+download_url_1=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*DBI.nro' | sed 's/"//g')
+download_url_2=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*translation_zhcn.bin' | sed 's/"//g')
+curl -sL "$download_url_1" -o DBI.nro && 
+curl -sL "$download_url_2" -o translation.bin && {
     echo -e "DBI download\033[32m success\033[0m."
     mv DBI.nro ./switch/DBI
+    mv translation.bin ./switch/DBI
     record_item "DBI" "$(jq -r '.tag_name // "unknown"' <<< "$latest_release_info")"
 } || echo -e "DBI download\033[31m failed\033[0m."
 
@@ -231,6 +234,7 @@ curl -sL "$download_url" -o sphaira.zip&& {
     echo -e "Sphaira download\033[32m success\033[0m."
     unzip -oq sphaira.zip
     rm sphaira.zip
+    [ -d "nx2" ] && rm -rf nx2
     record_item "Sphaira" "$(jq -r '.tag_name // "unknown"' <<< "$latest_release_info")"
 } || echo -e "Sphaira download\033[31m failed\033[0m."
 
@@ -518,22 +522,23 @@ bootprotect=0
 icon=bootloader/res/icon_ams.bmp
 payload=bootloader/payloads/fusee.bin
 
-{大气层-虚拟系统-极限超频}
-[CFW (emuMMC)]
+{大气层-虚拟系统-超频}
+[CFW (emuMMC) - HOC]
 emummcforce=1
 fss0=atmosphere/package3
 kip1=atmosphere/kips/hoc.kip
+secmon=atmosphere/exosphere.bin
 atmosphere=1
 icon=bootloader/res/icon_Atmosphere_emunand.bmp
-id=cfw-emu
+id=cfw-emu-hoc
 
-{大气层-虚拟系统-无超频}
-[CFW-NAOC (emuMMC)]
+{大气层-虚拟系统-不超频}
+[CFW (emuMMC)]
 emummcforce=1
 fss0=atmosphere/package3
 atmosphere=1
 icon=bootloader/res/icon_Atmosphere_emunand.bmp
-id=cfw_naoc-emu
+id=cfw-emu
 
 # {大气层-真实系统}
 # [CFW (sysMMC)]
@@ -738,6 +743,29 @@ if [ $? -ne 0 ]; then
     echo -e "Writing system_settings.ini in ./atmosphere/config\033[31m failed\033[0m."
 else
     echo -e "Writing system_settings.ini in ./atmosphere/config\033[32m success\033[0m."
+fi
+
+### Write package.ini in /switch/.packages
+cat > ./switch/.packages/package.ini << ENDOFFILE
+[*Reboot To]
+[*Boot Entry]
+ini_file_source /bootloader/hekate_ipl.ini
+filter config
+reboot boot '{ini_file_source(*)}'
+[hekate - ]
+reboot HEKATE
+[hekate UMS - ]
+reboot UMS
+
+[Commands]
+[Shutdown - ]
+;hold=true
+shutdown
+ENDOFFILE
+if [ $? -ne 0 ]; then
+    echo -e "Writing package.ini in ./switch/.packages\033[31m failed\033[0m."
+else
+    echo -e "Writing package.ini in ./switch/.packages\033[32m success\033[0m."
 fi
 
 ### Delete unneeded files
